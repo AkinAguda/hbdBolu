@@ -102,6 +102,12 @@ body {
   color: $light;
   grid-gap: 20px;
   grid-auto-rows: 0px;
+  @media (max-width: $tab) {
+    display: block;
+    & > * {
+      margin-bottom: 20px;
+    }
+  }
   .wish {
     background-color: $dark;
     padding: 80px 66px;
@@ -109,6 +115,9 @@ body {
     font-size: 14px;
     font-weight: 600;
     line-height: 23px;
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+    }
     p {
       margin: 0;
     }
