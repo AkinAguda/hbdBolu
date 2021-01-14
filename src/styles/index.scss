@@ -158,6 +158,7 @@ main {
   box-sizing: border-box;
   text-align: center;
   position: relative;
+  overflow: hidden;
   .confetti {
     display: flex;
     justify-content: space-between;
