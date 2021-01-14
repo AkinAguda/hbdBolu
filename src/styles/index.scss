@@ -4,12 +4,68 @@ body,
 html {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
   background-color: $black;
   font-family: "Montserrat", serif;
   color: white;
+}
+
+.wishes-container {
+  position: relative;
+  & > img {
+    z-index: 1;
+    position: absolute;
+    @media (max-width: 800px) {
+      z-index: 0;
+    }
+  }
+  .edge-stars {
+    bottom: 20%;
+    right: 0;
+  }
+  .low-stars {
+    bottom: 0;
+    left: 0;
+  }
+  .low-heart {
+    bottom: 1%;
+    right: 5%;
+    animation: pulse 2s ease-in-out 1s infinite;
+  }
+  .confetti-right {
+    bottom: 50%;
+    left: 3%;
+  }
+}
+
+@keyframes translateY {
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: 0;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: 0;
+  }
+}
+
+@keyframes translateX {
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: 0;
+  }
 }
 
 @-webkit-keyframes rotation {
@@ -92,6 +148,97 @@ body {
   border-radius: 100%;
 }
 
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  .confetti {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    img {
+      height: 75px;
+      width: 75px;
+      animation: pulse 5s ease-out 1s infinite;
+      @media (max-width: $tab) {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+  .blue {
+    color: dodgerblue;
+  }
+  h1 {
+    font-size: 4vw;
+    @media (max-width: $tab) {
+      font-size: 2rem;
+    }
+  }
+  h2 {
+    font-weight: lighter;
+    opacity: 0.8;
+    font-size: 2rem;
+    margin-top: 0;
+    @media (max-width: $tab) {
+      font-size: 1rem;
+    }
+  }
+  & > img {
+    position: absolute;
+  }
+  .lord-bee {
+    top: 40px;
+    left: 10vw;
+  }
+  .bolu-face {
+    top: 15vh;
+    left: 25vw;
+    animation: translateY 3s ease 0.4s infinite;
+    @media (max-width: $tab) {
+      height: 60px;
+      width: 60px;
+    }
+  }
+  .bolu-face-small {
+    right: 20%;
+    bottom: 15%;
+    height: 40px;
+    width: 40px;
+  }
+  .bolu {
+    bottom: 40px;
+    left: 20px;
+    animation: translateY 2s ease-in-out 1s infinite;
+    @media (max-width: $tab) {
+      width: 130px;
+      height: 40px;
+    }
+  }
+  .heart-main {
+    right: 10%;
+    top: 30%;
+    animation: pulse 2s ease-in-out 1s infinite;
+  }
+  .bee {
+    right: 40px;
+    bottom: 35%;
+    animation: translateX 4s ease 1s infinite;
+    @media (max-width: $tab) {
+      width: 100px;
+      height: 40px;
+      bottom: 25%;
+    }
+  }
+}
+
 #wishes {
   padding: 0 20px;
   box-sizing: border-box;
@@ -102,6 +249,7 @@ body {
   color: $light;
   grid-gap: 20px;
   grid-auto-rows: 0px;
+  position: relative;
   @media (max-width: $tab) {
     display: block;
     & > * {
