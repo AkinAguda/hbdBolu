@@ -38,20 +38,10 @@ body {
       opacity: 0.8;
       margin-top: 32px;
       font-weight: normal;
-      margin-left: 15px;
       position: relative;
-      &::before {
-        content: "-";
-        position: absolute;
-        display: block;
-        left: 0;
-      }
     }
     @media (min-width: $big) {
       font-size: 16px;
     }
   }
-  // .o {
-  //   grid-row: 1/1;
-  // }
 }
